@@ -21,7 +21,7 @@ then
     exit
 fi
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > scores.txt
-if [[ `grep "OK (1 test)" scores.txt` == "OK (1 test)"]]
+if [[ `grep "OK (1 test)" scores.txt` == "OK (1 test)" ]]
 then
     echo "ALL TESTS PASSED"
 else

@@ -2,12 +2,22 @@ CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
 
 rm -rf student-submission
 git clone $1 student-submission
-if[[-f ListExamples.java]]
+if [[ -f student-submission/ListExamples.java ]]
 then
     echo "Files Found"
 else
     echo "Files not Found"
+    rm -r student-submission
     exit
 fi
-echo "Finished cloning"
+echo 'Finished cloning'
 cp student-submission/ListExamples.java `pwd`
+javac -cp $CPATH *.java
+if [[ $? == 0 ]]
+then
+    echo "Did not compile"
+
+java -cp $CPATH TestListExamples
+
+rm -r student-submission
+rm ListExamples.java

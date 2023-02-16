@@ -17,7 +17,8 @@ if [[ $? == 0 ]]
 then
     echo "Did not compile"
 
-java -cp $CPATH TestListExamples
+fi
+java -cp $CPATH TestListExamples > score.txt
 
 rm -r student-submission
-rm ListExamples.java
+rm ListExamples.*

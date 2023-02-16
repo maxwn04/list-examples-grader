@@ -20,7 +20,12 @@ then
     rm ListExamples.*
     exit
 fi
-java -cp $CPATH org.junit.runner.JUnitCore TestListExamples
-
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > scores.txt
+if [[ `grep "OK (1 test)" scores.txt` == "OK (1 test)"]]
+then
+    echo "ALL TESTS PASSED"
+else
+    grep ^"Tests run:" scores.txt
+fi
 rm -rf student-submission
 rm ListExamples.*

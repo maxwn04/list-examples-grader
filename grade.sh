@@ -20,7 +20,7 @@ then
     rm ListExamples.*
     exit
 fi
-java -cp $CPATH"org.junit.runner.JUnitCore" TestListExamples
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples
 
 rm -r student-submission
 rm ListExamples.*

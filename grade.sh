@@ -20,8 +20,7 @@ then
     rm ListExamples.*
     exit
 fi
-java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > scores.txt
-grep ^"Tests run: " scores.txt
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples
 
-rm -r student-submission
+rm -rf student-submission
 rm ListExamples.*

@@ -18,9 +18,9 @@ then
     echo "Did not compile"
     rm -r student-submission
     rm ListExamples.*
-
+    exit
 fi
-java -cp $CPATH TestListExamples > score.txt
+java -cp $CPATH TestListExamples
 
 rm -r student-submission
 rm ListExamples.*

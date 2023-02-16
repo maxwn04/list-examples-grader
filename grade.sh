@@ -11,3 +11,4 @@ else
 fi
 echo "Finished cloning"
 cp student-submission/ListExamples.java `pwd`
+javac -cp $CPATH *.java

@@ -13,9 +13,11 @@ fi
 echo 'Finished cloning'
 cp student-submission/ListExamples.java `pwd`
 javac -cp $CPATH *.java
-if [[ $? == 0 ]]
+if [[ $? == 1 ]]
 then
     echo "Did not compile"
+    rm -r student-submission
+    rm ListExamples.*
 
 fi
 java -cp $CPATH TestListExamples > score.txt
